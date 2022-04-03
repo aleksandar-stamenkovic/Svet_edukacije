@@ -1,0 +1,25 @@
+/*-------------------------------------
+    SIDEBAR DUGME (STAY PRESSED)
+-------------------------------------*/
+
+.this-page-style {
+	color: #d97652 !important;
+	background: #fff !important;
+}
+
+/*-------------------------------------
+    ADDITIONAL ITEMS
+-------------------------------------*/
+
+/*-------------------------------------
+    MEDIAQUERIES
+-------------------------------------*/
+.scheduler-container {
+	display: flex;
+	justify-content: baseline;
+	flex-wrap: wrap;
+}
+
+.test {
+	padding-left: 10px;
+}

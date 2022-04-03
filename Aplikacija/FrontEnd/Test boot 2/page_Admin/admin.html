@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Dashboard</title>
+
+    <!-- Table syling -->
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="sidebarAdmin.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+
+<body onload="onloadBody()">
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin [Mode]</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Kontrolni panel</p>
+        
+                <!--<li>
+                    <a href="#">Početna</a>
+                </li>-->
+                <li>
+                    <a href="#" onclick="ucitajPredavace()">Predavači</a>
+                </li>
+                <li>
+                    <a href="#" onclick="ucitajUcenike()">Učenici</a>
+                </li>
+                <li>
+                    <a href="#" onclick="ucitajPredmete()">Predmeti</a>
+                </li>
+                <li>
+                    <a href="#" onclick="ucitajZahteve()">Zahtevi</a>
+                </li>
+
+            <ul class="list-unstyled CTAs">
+                <!--
+                <li>
+                    <a href="#" class="download">Profil</a>
+                </li>
+                -->                
+            </ul>
+        </nav>
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span></span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="../page_Landing/landing.html">Odjavi se</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="obrisanPredavacSuccessful alert alert-success" role="alert" style="display:none">
+                Uspešno obrisan predavač! ✔
+            </div>
+            <div class="obrisanUcenikSuccessful alert alert-success" role="alert" style="display:none">
+                Uspešno obrisan učenik! ✔
+            </div>
+            <table id="example" class="display" style="width:100%">
+                <thead>
+
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+            <!--MODAL DIJALOZI-->
+            <!-- Modal Delete Warning-->
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Brisanje predavača</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                        Da li ste sigurni da želite da obrišete predavača?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="cancel-deleting" class="btn btn-secondary" data-dismiss="modal">Odustani</button>
+                            <button type="button" id="confirm-deleting" class="btn btn-primary" data-dismiss="modal">Obriši</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Modal Edit Dialog Za Predavaca-->
+            <div class="modal fade" id="editPredavacModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Izmena podataka predavača</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                <input type="text" disabled class="form-control editPredavac-id">
+                                <input type="text" class="form-control editPredavac-ime">
+                                <input type="text" class="form-control editPredavac-prezime">
+                                <input type="text" class="form-control editPredavac-username">
+                                <input type="text" class="form-control editPredavac-password">                            
+                                <input type="email" class="form-control editPredavac-email">
+                                <input type="text" class="form-control editPredavac-brtel">                            
+                                <textarea class="form-control editPredavac-opis"  rows="3"></textarea>
+                                <input type="text" disabled class="form-control editPredavac-ocenaPlus">
+                                <input type="text" disabled class="form-control editPredavac-ocenaMinus">
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="cancel-editingPredavac" class="btn btn-secondary" data-dismiss="modal">Odustani</button>
+                            <button type="button" id="confirm-editingPredavac" class="btn btn-primary" onclick="editPredavacaSacuvajIzmene()">Sačuvaj izmene</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Modal Editing Dialog Za Ucenika-->
+            <div class="modal fade" id="editUcenikModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Izmena podataka učenika</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                <input type="text" disabled class="form-control editUcenik-id">
+                                <input type="text" class="form-control editUcenik-ime">
+                                <input type="text" class="form-control editUcenik-prezime">
+                                <input type="text" class="form-control editUcenik-username">
+                                <input type="text" class="form-control editUcenik-password">                            
+                                <input type="email" class="form-control editUcenik-email">
+                                <input type="text" class="form-control editUcenik-brtel">                            
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="cancel-editUcenik" class="btn btn-secondary" data-dismiss="modal">Odustani</button>
+                            <button type="button" id="confirm-editUcenik" class="btn btn-primary" onclick="editUcenikaSacuvajIzmene()">Sačuvaj izmene</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    <script src="admin.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+
+    </body>
+</html>

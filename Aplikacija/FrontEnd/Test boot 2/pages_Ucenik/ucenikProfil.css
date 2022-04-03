@@ -1,0 +1,50 @@
+/*--------------------------------------
+	DUGMICI ZA PROFIL
+--------------------------------------*/
+.form-control {
+	margin-top: 5px;
+	border: none;
+}
+.form-control:enabled {
+	margin-top: 5px;
+	border: 1px solid lightgray;
+}
+
+.profile-izmeni-button {
+	margin-top: 5px;
+}
+
+.profile-izmeni-button,
+.profile-sacuvaj-button {
+	width: 100%;
+	background-color: #035949;
+	border-color: #035949;
+}
+
+.profile-izmeni-button:disabled {
+	background-color: #035949;
+	border-color: #035949;
+}
+
+.profile-sacuvaj-button {
+	margin-top: -5px;
+	visibility: hidden;
+}
+
+.profile-izmeni-button:hover:enabled,
+.profile-sacuvaj-button:hover {
+	background-color: #fafafa;
+	color: #d97652;
+	border-color: #035949;
+}
+
+.profile-odustani-button {
+	margin-top: -5px;
+	visibility: hidden;
+	width: 100%;
+	background-color: #343a40;
+}
+.profile-odustani-button:hover {
+	background-color: #343a40;
+	border-color: #035949;
+}

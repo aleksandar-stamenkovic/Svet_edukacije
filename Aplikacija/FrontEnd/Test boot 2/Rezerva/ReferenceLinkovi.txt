@@ -1,0 +1,2 @@
+Session storage
+https://stackoverflow.com/questions/11609376/share-data-between-html-pages

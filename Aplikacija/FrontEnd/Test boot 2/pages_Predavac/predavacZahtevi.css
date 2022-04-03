@@ -1,0 +1,135 @@
+/*-------------------------------------
+    SIDEBAR DUGME (STAY PRESSED)
+-------------------------------------*/
+
+.this-page-style {
+	color: #d97652 !important;
+	background: #fff !important;
+}
+
+/*-------------------------------------
+    MODAL DIALOGS
+-------------------------------------*/
+
+/*-------------------------------------
+    CARD ZAHTEVI
+-------------------------------------*/
+.card-colapser {
+	margin-top: 1px;
+	border-top: none !important;
+	border-bottom: none !important;
+}
+
+.colapser-body-text {
+	border-bottom: 1px solid lightgray;
+	font-size: 12pt;
+	color: #343a40;
+}
+.colapser-body-text:disabled {
+	background-color: #fafafa;
+	border: none;
+}
+
+.chatlike-header {
+	font-size: 12pt;
+	font-weight: 900;
+	color: #d97652;
+}
+
+.colapser-body-buttons {
+	border-bottom: 1px solid lightgray;
+	padding-bottom: 15px;
+}
+
+.accept-btn {
+	background-color: #fafafa;
+	color: #035949;
+	border-color: lightgrey;
+	border: none;
+}
+
+.decline-btn {
+	background-color: #fafafa;
+	color: #b2002d;
+	border-color: lightgrey;
+	border: none;
+}
+.reply-btn {
+	background-color: #fafafa;
+	color: #343a40;
+	border-color: lightgrey;
+	border: none;
+}
+
+.accept-btn:hover {
+	background-color: #035949;
+	color: #fafafa;
+	border-color: #035949;
+}
+
+.decline-btn:hover {
+	background-color: #b2002d;
+	color: #fafafa;
+	border-color: #b2002d;
+}
+
+.reply-btn:hover {
+	background-color: #343a40;
+	color: #fafafa;
+	border-color: #343a40;
+}
+
+.btn-group {
+	position: absolute;
+	right: 10px;
+}
+
+.zahtev-headline {
+	color: #343a40;
+}
+.zahtev-headline:hover {
+	color: #d97652;
+}
+
+.btn-link {
+	text-decoration: none !important;
+}
+
+.date-time-picker {
+	width: 35%;
+	right: 0px;
+}
+
+#confirm-acc-btn {
+	background-color: #035949;
+	color: #fafafa;
+	border-color: #035949;
+}
+
+#confirm-acc-btn:hover {
+	background-color: #fafafa;
+	color: #035949;
+	border-color: #035949;
+}
+
+/*-------------------------------------
+    MODAL
+-------------------------------------*/
+
+.btn-posalji-modal {
+	background-color: #035949;
+	border-color: #035949;
+}
+.btn-posalji-modal:hover {
+	background-color: #fafafa;
+	border-color: #035949;
+	color: #035949;
+}
+
+.btn-nook-modal {
+	background-color: #343a40;
+}
+
+/*-------------------------------------
+    MEDIAQUERIES
+-------------------------------------*/

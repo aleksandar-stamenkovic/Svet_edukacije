@@ -1,0 +1,227 @@
+/*-------------------------------------
+    SIDEBAR DUGME (STAY PRESSED)
+-------------------------------------*/
+
+/* -----------------------
+style card osnovna, srednja, faks
+------------------*/
+.this-page-style {
+	color: #d97652 !important;
+	background: #fff !important;
+}
+.card-img-srednja {
+	width: 100%;
+	height: 150px;
+}
+.card-img-faks {
+	width: 100%;
+	height: 150px;
+}
+.card-img-osnovna {
+	width: 100%;
+	height: 150px;
+}
+
+.card-deck {
+	/*ovo je za flexovanje*/
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.card {
+}
+
+/*-------------------------
+ style loadStrana
+ ----------------------*/
+
+.btn-pretrazi {
+	background-color: #035949;
+	border: 1px solid #035949;
+}
+#idLoadStrana {
+	display: none;
+	/*ovo izbrsi ako hoces preko celog ekrana kartice i polje pretrazi*/
+	margin-left: 40px;
+	width: 80%;
+}
+
+.col-sm-10 {
+	margin-left: 40px;
+	width: 75%;
+}
+
+/*-------------------------
+ style nakon loadStrane, klika pretrazi na loadStrani
+ ----------------------*/
+.predmet-profesor {
+	margin-left: 30px;
+}
+/*------------
+najbolji profesori kartica
+-----------------*/
+.card-colapser {
+	margin-top: 1px;
+	border-top: none !important;
+	border-bottom: none !important;
+}
+.colapser-body-text {
+	border-bottom: 1px solid lightgray;
+	font-size: 12pt;
+	color: #343a40;
+}
+.colapser-body-text:disabled {
+	background-color: #fafafa;
+	border: none;
+}
+.btn-link {
+	text-decoration: none !important;
+}
+
+/*-------------------------------------
+    SEARCH RESULT MEDIA
+-------------------------------------*/
+
+.mr-class-initials {
+	width: 10%;
+	border-radius: 3px;
+	background-color: #035949;
+	color: #fff;
+	align-content: center;
+}
+.media-initials {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.media {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 10px;
+	border: 2px solid #035949;
+	border-radius: 3px;
+}
+.mr-3 {
+	width: 105px;
+	height: 105px;
+}
+
+.mt-0 {
+	color: #d97652;
+}
+.media-body {
+	width: 80%;
+}
+
+.btn-group-oceni {
+	/*padding-top: 5px;
+	padding-left: 40%;
+	margin-bottom: 5px;
+	width: 100%;
+	height: 20px;*/
+}
+
+.btn-label-ocena,
+.btn-label-ocena:hover {
+	font-weight: bold;
+	border: none;
+	background-color: #fafafa;
+	color: #343a40;
+}
+
+.btn-pozitivna-ocena,
+.btn-pozitivna-ocena:hover,
+.btn-negativna-ocena,
+.btn-negativna-ocena:hover {
+	border: none;
+	background-color: #fafafa;
+	color: #343a40;
+}
+
+/*-------------------------------------
+    MODAL DIALOG
+-------------------------------------*/
+
+.btn-posalji-modal {
+	background-color: #035949;
+	border-color: #035949;
+}
+.btn-posalji-modal:hover {
+	background-color: #fafafa;
+	border-color: #035949;
+	color: #035949;
+}
+
+.btn-nook-modal {
+	background-color: #343a40;
+}
+/*-------------------------------------
+    MODAL DIALOG
+-------------------------------------*/
+
+.lbl-info {
+	color: #343a40;
+}
+
+.pos-neg-points {
+	padding-bottom: 5px;
+}
+
+.positivePoints {
+	color: #035949;
+}
+.negativePoints {
+	color: #b2002d;
+}
+
+.negativePoint-num,
+.positivePoint-num {
+	margin-left: 6px;
+}
+
+.input-group-prepend {
+	height: 45px;
+}
+
+.modal-info-body {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.modal-card-two {
+	background-color: lightslategray;
+	height: 200px;
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.modal-img-info {
+	position: absolute;
+	right: 16px;
+	width: 150px;
+	height: 150px;
+}
+
+/*-------------------------------------
+    MAPA
+-------------------------------------*/
+#idmap {
+	width: 100%;
+}
+/*-------------------------------------
+    MEDIAQUERIES
+-------------------------------------*/
+
+@media (max-width: 200px) {
+	.mr-class-initials {
+		width: 20%;
+	}
+	.card-body {
+		width: 150px !important;
+	}
+}
+
+.media-predmet-profesor {
+	cursor: pointer;
+}

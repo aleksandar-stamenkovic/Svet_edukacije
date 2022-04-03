@@ -1,0 +1,92 @@
+/*-------------------------------------
+    SIDEBAR DUGME (STAY PRESSED)
+-------------------------------------*/
+
+/* -----------------------
+
+/*-------------------------------------
+    MODAL DIALOG
+-------------------------------------*/
+
+.btn-posalji-modal {
+	background-color: #035949;
+	border-color: #035949;
+}
+.btn-posalji-modal:hover {
+	background-color: #fafafa;
+	border-color: #035949;
+	color: #035949;
+}
+
+.btn-nook-modal {
+	background-color: #343a40;
+}
+/*-------------------------------------
+    MODAL DIALOG
+-------------------------------------*/
+
+.lbl-info {
+	color: #343a40;
+}
+
+.pos-neg-points {
+	padding-bottom: 5px;
+}
+
+.positivePoints {
+	color: #035949;
+}
+.negativePoints {
+	color: #b2002d;
+}
+
+.negativePoint-num,
+.positivePoint-num {
+	margin-left: 6px;
+}
+
+.input-group-prepend {
+	height: 45px;
+}
+
+.modal-info-body {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.modal-card-two {
+	background-color: lightslategray;
+	height: 200px;
+	width: 100%;
+	margin-bottom: 5px;
+}
+/* div sa tekstom*/
+.entry
+{
+ /*width: 80%;*/
+ margin-left: 9%;
+ margin-right: 10%;
+ margin-bottom: 9%;
+ border-top:10%;
+ border-bottom: 1px solid #035949;
+
+}
+
+.entry-title
+{
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+/*-------------------------------------
+    MEDIAQUERIES
+-------------------------------------*/
+
+@media (max-width: 200px) {
+	.mr-class-initials {
+		width: 20%;
+	}
+	.card-body {
+		width: 33% !important;
+	}
+}

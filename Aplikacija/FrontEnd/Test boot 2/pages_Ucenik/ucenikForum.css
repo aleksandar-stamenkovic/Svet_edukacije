@@ -1,0 +1,83 @@
+/*-------------------------------------
+    SIDEBAR DUGME (STAY PRESSED)
+-------------------------------------*/
+
+.this-page-style {
+	color: #d97652 !important;
+	background: #fff !important;
+}
+
+/*-------------------------------------
+    ADDITIONAL ITEMS
+-------------------------------------*/
+
+/*-------------------------------------
+    MEDIAQUERIES
+-------------------------------------*/
+.card-title
+{
+    color:#01403A ;
+    font-size: 24px;
+}
+
+.forma1
+{
+    padding: 10px;
+    border: 2px #01403A;
+    
+}
+
+.forma1 input[type="text"], .forma1 textarea, .form input[type="date"]
+{
+    border:1px solid #01403A;
+    padding: 2px;
+     width: 100%;
+}
+
+.comentBox
+{
+    padding: 1%;
+    width: 100%;
+    border:1px solid #01403A;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.leftPanelImg
+{
+    width:10%;
+    float: left;
+}
+
+.leftPanelImg img{
+    border-radius: 100%;
+}
+
+.rightPanel
+{
+    width: 85%;
+    float: left;
+    margin-left: 1%;
+}
+
+.clear{
+    clear: both;
+}
+
+#addComent
+{
+    color: #fff;
+    background-color:#035949;
+}
+
+.card-img-top
+{
+    height: 400px;
+}
+
+
+
+#calendar {
+	max-width: 100%;
+	height: 100%;
+}
